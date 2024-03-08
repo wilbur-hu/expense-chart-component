@@ -2,7 +2,7 @@
 
 import { ExpenseData } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 export type HistogramBlockProps = {
   className?: string;
@@ -16,23 +16,10 @@ function maxAmount(data: ExpenseData[]): number {
 export default function HistogramBlock(props: HistogramBlockProps) {
   const { className, data } = props;
 
-  const amounts = useRef(new Array(props.data.length));
-  const barContainer = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const oldPaddingTop = barContainer.current!.style.paddingTop;
-
-    barContainer.current!.style.paddingTop =
-      amounts.current[0].offsetHeight + "px";
-  });
-
   const max = maxAmount(data);
   return (
-    <div className={cn("flex flex-col", className)}>
-      <div
-        className="flex h-full grow items-end justify-between"
-        ref={barContainer}
-      >
+    <div className={cn("flex flex-col pt-[48px]", className)}>
+      <div className="flex grow items-end justify-between">
         {data.map((d, i) => {
           return (
             <div
@@ -44,12 +31,7 @@ export default function HistogramBlock(props: HistogramBlockProps) {
                 max={max}
                 className="peer order-1 mt-[8px] shrink-0 self-stretch"
               />
-              <span
-                className="invisible rounded-[5px] bg-dark-brown p-[8px] text-[18px] font-bold leading-[23px] text-card-white peer-hover:visible"
-                ref={(node) => {
-                  amounts.current[i] = node;
-                }}
-              >
+              <span className="invisible h-[40px] rounded-[5px] bg-dark-brown p-[8px] text-[18px] font-bold leading-[23px] text-card-white peer-hover:visible">
                 ${d.amount}
               </span>
             </div>
@@ -61,7 +43,7 @@ export default function HistogramBlock(props: HistogramBlockProps) {
           return (
             <span
               key={d.day}
-              className="w-[50.36px] text-center text-[14px] text-dark-brown"
+              className="mt-[8px] w-[50.36px] text-center text-[14px] text-medium-brown"
             >
               {d.day}
             </span>

@@ -12,8 +12,8 @@ export default function ExpenseChartCardHeader(
     <section>
       <header className="flex justify-between rounded-[20px] bg-red">
         <div className="mb-[25px] ml-[32px] mt-[27px] flex flex-col">
-          <p className="text-[18px] leading-[23px] text-white">My Balance</p>
-          <p className="text-[32px] font-bold leading-[42px] text-card-white">
+          <p className="text-[18px] leading-[23px] text-white">My balance</p>
+          <p className="mt-[8px] text-[32px] font-bold leading-[42px] text-card-white">
             $921.48
           </p>
         </div>
