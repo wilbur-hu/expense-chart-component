@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("h-screen", dmSans.className)}>
         <div className="background-container flex min-h-screen items-center justify-center bg-cream">
-          <div className="card-conainer w-[540px]">{children}</div>
+          <div className="card-conainer w-[343px] shrink-0 md:w-[540px]">
+            {children}
+          </div>
         </div>
       </body>
     </html>

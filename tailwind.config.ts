@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        md: "540px",
+      },
       colors: {
         red: "#EC755D",
         cyan: "#76B5BC",

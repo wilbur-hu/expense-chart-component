@@ -18,13 +18,13 @@ export default function HistogramBlock(props: HistogramBlockProps) {
 
   const max = maxAmount(data);
   return (
-    <div className={cn("flex flex-col pt-[48px]", className)}>
+    <div className={cn("flex flex-col pt-[34px] md:pt-[48px]", className)}>
       <div className="flex grow items-end justify-between">
         {data.map((d, i) => {
           return (
             <div
               key={d.day}
-              className="flex h-full w-[50.36px] shrink-0 flex-col items-center justify-end overflow-visible"
+              className="flex h-full w-[33px] shrink-0 flex-col items-center justify-end overflow-visible md:w-[50.36px]"
             >
               <Bar
                 amount={d.amount}
@@ -43,7 +43,7 @@ export default function HistogramBlock(props: HistogramBlockProps) {
           return (
             <span
               key={d.day}
-              className="mt-[8px] w-[50.36px] text-center text-[14px] text-medium-brown"
+              className="mt-[8px] w-[33px] text-center text-[12px] leading-[16px] text-medium-brown md:w-[50.36px] md:text-[14px]"
             >
               {d.day}
             </span>
@@ -73,7 +73,7 @@ function Bar({
 
   return (
     <div
-      className={cn("rounded-[5px]", bgClass, className)}
+      className={cn("rounded-[3px] md:rounded-[5px]", bgClass, className)}
       style={{ height: `${(amount / max) * 100}%` }}
     />
   );
