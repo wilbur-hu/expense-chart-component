@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        red: "#EC755D",
+        cyan: "#76B5BC",
+        "dark-brown": "#382314",
+        "medium-brown": "#92857A",
+        "cream": "#F8E9DD",
+        "card-white": "#FFFBF6",
+      }
     },
   },
   plugins: [],

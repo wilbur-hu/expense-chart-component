@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Expense Chart Component",
 };
 
 export default function RootLayout({
@@ -16,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("h-screen")}>
-        <div className="background-container min-h-screen">
-          <div className="card-conainer">{children}</div>
+      <body className={cn("h-screen", dmSans.className)}>
+        <div className="background-container flex min-h-screen items-center justify-center bg-cream">
+          <div className="card-conainer w-[540px]">{children}</div>
         </div>
       </body>
     </html>
